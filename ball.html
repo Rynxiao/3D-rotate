@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ball</title>
+	<style>
+		* {
+		    margin: 0;
+		    padding: 0;
+		}
+		.container {
+		    width: 100%;
+		    height: 400px;
+		    position: relative;
+			perspective: 4000px;
+		    transform: translate3d(0, 0, 0);
+		}
+		.stage {
+			width: 100%;
+			height: 100%;
+			transform-style: preserve-3d;
+		    transform: translate3d(0, 0, -2000px);
+		}
+		.sun {
+		    position: absolute;
+		    width: 204px;
+		    height: 204px;
+		    margin: -100px 0 0 -100px;
+		    top: 50%;
+		    left: 50%;
+		    transform-style: preserve-3d;
+		    animation: rotateItself 30s linear infinite;
+		}
+		.sun>.x, .sun>.x1, .sun>.x2, .sun>.y, .sun>.y1, .sun>.y2, .sun>.z, .sun>.z1, .sun>.z2 {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    border: 2px solid rgba(255, 79, 0, 0.9);
+		    background-image: radial-gradient(transparent 70%, rgba(255, 79, 0, 0.9) 100%);
+		    box-shadow: 0 0 100px rgba(255, 79, 0, 0.9);
+		    border-radius: 50%;
+		}
+		.sun>.x1, .sun>.x2, .sun>.y1, .sun>.y2, .sun>.z1, .sun>.z2 {
+			width: 87.5%;
+			height: 87.5%;
+			top: 6.25%;
+			left: 6.25%;
+		}
+		.sun>.xInner, .sun>.yInner, .sun>.zInner {
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			border: 2px solid rgba(255, 79, 0, 0.9);
+		}
+		.sun>.x {
+			transform: rotateY(90deg);
+		}
+		.sun>.x1 {
+			transform: rotateY(90deg) translateZ(48.41px);
+		}
+		.sun>.x2 {
+			transform: rotateY(90deg) translateZ(-48.41px);
+		}
+		.sun>.z1 {
+			transform: translateZ(48.41px);
+		}
+		.sun>.z2 {
+			transform: translateZ(-48.41px);
+		}
+		.sun>.y {
+			transform: rotateX(90deg);
+		}
+		.sun>.y1 {
+			transform: rotateX(90deg) translateZ(48.41px);
+		}
+		.sun>.y2 {
+			transform: rotateX(90deg) translateZ(-48.41px);
+		}
+		.sun>.xInner {
+			transform: rotateY(90deg);
+		}
+		.sun>.yInner {
+			transform: rotateX(90deg);
+		}
+		.sun>.zInner {
+			transform: rotateZ(90deg);
+		}
+		@keyframes rotateItself {
+			0% {
+			    transform: rotateY(0deg) rotateX(0deg);
+			}
+			100% {
+			    transform: rotateY(360deg) rotateX(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	    <div class="stage">
+	        <div class="sun">
+	            <div class="x"></div>
+	            <div class="x1"></div>
+	            <div class="x2"></div>
+	            <div class="xInner"></div>
+	            <div class="y"></div>
+	            <div class="y1"></div>
+	            <div class="y2"></div>
+	            <div class="yInner"></div>
+	            <div class="z"></div>
+	            <div class="z1"></div>
+	            <div class="z2"></div>
+	            <div class="zInner"></div>
+	        </div>
+	    </div>
+	</div>
+</body>
+</html>
